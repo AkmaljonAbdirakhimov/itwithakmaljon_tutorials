@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'why_use_const.dart';
+import 'day1p/todos_app/pages/todos_page.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const ProviderScope(
+    child: TodosApp(),
+  ));
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class TodosApp extends StatelessWidget {
+  const TodosApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: WhyUseConst(),
+      debugShowCheckedModeBanner: false,
+      home: TodosPage(),
     );
   }
 }
